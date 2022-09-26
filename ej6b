@@ -1,0 +1,16 @@
+<HTML>
+<HEAD><TITLE> EJ6B factorial</TITLE></HEAD>
+<BODY>
+<?php
+$num="14";
+$factorial="1";
+echo "$num!=";
+for ($i = 1; $i <= $num; $i++){ 
+    $factorial = $factorial * $i; 
+    echo "x$i";
+  } 
+echo" = $factorial";
+?>
+
+</BODY>
+</HTML>
