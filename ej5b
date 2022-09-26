@@ -1,0 +1,17 @@
+<HTML>
+<HEAD><TITLE> EJ4B – Tabla Multiplicar</TITLE></HEAD>
+<BODY>
+<?php
+$num="8";
+echo "<table border=1px solid #000>";
+for ($x=1;$x<=10;$x++){
+    echo"<tr>";
+    $res=$num*$x;
+    echo "<td>$num x $x</td>
+    <td> $res </td>";
+   echo" </tr>";
+}
+echo "</table>";
+?>
+</BODY>
+</HTML>
