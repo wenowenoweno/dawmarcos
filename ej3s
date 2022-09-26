@@ -1,0 +1,25 @@
+<HTML>
+<HEAD><TITLE> Ejercicio 3 </TITLE></HEAD>
+<BODY>
+<?php
+$ipinicial="1.2.3.4/16";
+$ip=substr($ipinicial,0,strpos($ipinicial,"/"));
+$mascara=substr($ipinicial,strpos($ipinicial,"/")+1);echo "IP:".$ip."<BR>";
+echo "Mascara:".$mascara."<BR>";
+$p1 =strpos($ip,".",0);
+$p2 =strpos($ip,".",($p1+1));
+$p3 =strpos($ip,".",($p2+1));//echo $p1."<BR>"; echo $p2."<BR>"; echo $p3."<BR>";$oct1= substr($ip,0,$p1);
+$oct2= substr($ip,($p1+1),($p2-$p1));
+$oct3= substr($ip,($p2+1),($p3-$p2));
+$oct4= substr($ip,($p3+1),$p3);$binario=(str_pad(decbin($oct1),8,"0",STR_PAD_LEFT).
+str_pad(decbin($oct2),8,"0",STR_PAD_LEFT).
+str_pad(decbin($oct3),8,"0",STR_PAD_LEFT).
+str_pad(decbin($oct4),8,"0",STR_PAD_LEFT));
+$binariocortado=substr($binario,0,$mascara);
+$dirred=str_pad($binariocortado,32,'0',STR_PAD_RIGHT);
+$dirbroad=str_pad($binariocortado,32,'1',STR_PAD_RIGHT);echo "Dir Red:".$dirred."<BR>";
+echo "Dir Broadcast:".$dirbroad."<BR>";
+$dirred=bindec(substr($dirred,0,8)).".".bindec(substr($dirred,8,8)).".".bindec(substr($dirred,16,8)).".".bindec(substr($dirred,24,8));
+echo "Dir Red:".$dirred."<BR>";?>
+</BODY>
+</HTML>
