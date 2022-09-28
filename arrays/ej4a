@@ -1,23 +1,33 @@
 <HTML>
-<HEAD> <TITLE> Ejercicio 3 </TITLE> </HEAD>
-
+<HEAD> <TITLE> Ejercicio 4 </TITLE> </HEAD>
 <BODY>
 <?php
 $contador=0;
+$octal=array();
 $binario=array();
+$array=array(
+    array($binario),
+    array($octal)
+);
 while (count($binario)<20){
-    $binario[]=decbin($contador); 
+    $binario[]=decbin($contador);
+	$octal[]=decoct($contador);	
     $contador++;
 }
+//var_dump($binario);
+//var_dump($octal);
+$inversob=array_reverse($binario);
+$inversoo=array_reverse($octal);
+//var_dump($inversob);
+//var_dump($inversoo);
 echo"<table border=2px>
-<tr><td>Indice</td><td>Binario</td><td>Octal</td></tr>";
+ <tr><td>Indice</td><td>Binario</td><td>Octal</td></tr>";
 
-$inverso=array_reverse($binario);
-$x=count($inverso);
-for($x;$x=0;$x--){
-    $octal=decoct($x);
-    echo"<tr><td>$x</td><td>$inverso[$x]</td><td>$octal</td></tr>";
-}
+$x=count($array);
+foreach($array as $x => $valorx){
+     //echo"<tr><td>$x</td><td>".$array[$inversob][$x]."</td><td>".$array[$inversoo][$x]."</td></tr>";
+    echo $x." , valor es ".$valorx;
+    }
 ?>
 </BODY>
 </HTML>
