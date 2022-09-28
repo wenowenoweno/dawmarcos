@@ -4,7 +4,14 @@
 <BODY>
 <?php
 $suma=0;
-$impares=array(1,3,5,7,9,11,13,15,17,19);
+$contador=0;
+$impares=array();
+while (count($impares)<20){
+    if ($contador%2!=0){
+        $impares[]=$contador; 
+    }
+    $contador++;
+}
 $longitud=count($impares);
 echo"<table border=2px>
     <tr><td>Indice</td><td>Valor</td><td>Suma</td></tr>";
