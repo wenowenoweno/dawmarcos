@@ -1,0 +1,23 @@
+<HTML>
+<HEAD> <TITLE> Ejercicio 4 </TITLE> </HEAD>
+
+<BODY>
+<?php
+$contador=0;
+$binario=array();
+while (count($binario)<20){
+    $binario[]=decbin($contador); 
+    $contador++;
+}
+echo"<table border=2px>
+<tr><td>Indice</td><td>Binario</td><td>Octal</td></tr>";
+$longitud=count($binario);
+$inverso=array_reverse($binario);
+
+for($x=0;$x<$longitud;$x++){
+    $octal=decoct($x);
+    echo"<tr><td>$x</td><td>$inverso[$x]</td><td>$octal</td></tr>";
+}
+?>
+</BODY>
+</HTML>
