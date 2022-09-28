@@ -1,5 +1,5 @@
 <HTML>
-<HEAD> <TITLE> Ejercicio 4 </TITLE> </HEAD>
+<HEAD> <TITLE> Ejercicio 3 </TITLE> </HEAD>
 
 <BODY>
 <?php
@@ -11,10 +11,10 @@ while (count($binario)<20){
 }
 echo"<table border=2px>
 <tr><td>Indice</td><td>Binario</td><td>Octal</td></tr>";
-$longitud=count($binario);
-$inverso=array_reverse($binario);
 
-for($x=0;$x<$longitud;$x++){
+$inverso=array_reverse($binario);
+$x=count($inverso);
+for($x;$x=0;$x--){
     $octal=decoct($x);
     echo"<tr><td>$x</td><td>$inverso[$x]</td><td>$octal</td></tr>";
 }
