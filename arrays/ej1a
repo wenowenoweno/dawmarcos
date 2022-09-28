@@ -12,7 +12,7 @@ echo"<table border=2px>
 for($x=0;$x<$longitud;$x++){
 
 $suma=$suma+$impares[$x];
-echo "<tr><td>$x</td><td>$impares[$x]</td><td>$suma</td>";
+echo "<tr><td>$x</td><td>$impares[$x]</td><td>$suma</td></tr>";
 }
 echo"</table>";
 ?>
