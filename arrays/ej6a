@@ -1,0 +1,18 @@
+<HTML>
+<HEAD> <TITLE> Ejercicio 5 </TITLE> </HEAD>
+<BODY>
+<?php
+$arr1=array("Bases Datos", "Entornos Desarrollo", "Programacion");
+$arr2=array("Sistemas Informaticos", "FOL", "Mecanizado");
+$arr3=array("Desarrollo Web ES", "Desarrollo Web EC", "Despliegue", "Desarrollo Interfaces", "Ingles");
+
+$merge=array_merge($arr1,$arr2,$arr3);
+
+if (($x=array_search("Mecanizado",$merge))!==false){
+    unset($merge[$x]);
+}
+$reverso=array_reverse($merge);
+var_dump($reverso);
+?>
+</BODY>
+</HTML>
