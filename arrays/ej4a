@@ -5,10 +5,7 @@
 $contador=0;
 $octal=array();
 $binario=array();
-$array=array(
-    array($binario),
-    array($octal)
-);
+
 while (count($binario)<20){
     $binario[]=decbin($contador);
 	$octal[]=decoct($contador);	
@@ -23,11 +20,13 @@ $inversoo=array_reverse($octal);
 echo"<table border=2px>
  <tr><td>Indice</td><td>Binario</td><td>Octal</td></tr>";
 
-$x=count($array);
-foreach($array as $x => $valorx){
-     //echo"<tr><td>$x</td><td>".$array[$inversob][$x]."</td><td>".$array[$inversoo][$x]."</td></tr>";
-    echo $x." , valor es ".$valorx;
-    }
+$long=count($binario);
+
+for($x=0;$x<=$long-1;$x++){
+    echo"<tr><td>$x</td><td>".$inversob[$x]."</td><td>".$inversoo[$x]."</td></tr>";
+}
+
+echo "</table>";
 ?>
 </BODY>
 </HTML>
