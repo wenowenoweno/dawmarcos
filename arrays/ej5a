@@ -1,0 +1,14 @@
+<HTML>
+<HEAD> <TITLE> Ejercicio 5 </TITLE> </HEAD>
+<BODY>
+<?php
+$arr1=array("Bases Datos", "Entornos Desarrollo", "Programacion");
+$arr2=array("Sistemas Informaticos", "FOL", "Mecanizado");
+$arr3=array("Desarrollo Web ES", "Desarrollo Web EC", "Despliegue", "Desarrollo Interfaces", "Ingles");
+$arrayapelo=array($arr1,$arr2,$arr3);
+$merge=array_merge($arr1,$arr2,$arr3);
+$push=array();
+array_push($push, $arr1, $arr2, $arr3);
+?>
+</BODY>
+</HTML>
