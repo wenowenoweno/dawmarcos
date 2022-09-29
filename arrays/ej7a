@@ -1,0 +1,38 @@
+<HTML>
+<HEAD> <TITLE> Ejercicio 7 </TITLE> </HEAD>
+<BODY>
+<?php
+$alumnos=array("Marcos"=>"22","Oscar"=>"19","Manu"=>"25","Diana"=>"24","Dani"=>"27");
+foreach($alumnos as $x =>$valorx){
+    echo "Nombre= ".$x." Edad= ".$valorx."<br>";
+}
+echo "<br>";
+$claves=array_keys($alumnos);
+$valor=array_values($alumnos);
+echo "Posicion 2 = ".$claves[2]." ".$valor[2]."<br>";
+
+echo "<br>";
+echo "Posicion 3 = ".$claves[3]." ".$valor[3]."<br>";
+
+$longitud=count($alumnos)-1;
+echo "<br>";
+echo "Posicion Ultima = ".$claves[$longitud]." ".$valor[$longitud]."<br>";
+
+echo "<br>";
+
+asort($alumnos);
+
+$claves=array_keys($alumnos);
+$valor=array_values($alumnos);
+
+echo "Orden de menor a mayor <br><br>";
+
+foreach($alumnos as $x =>$valorx){
+    echo "Nombre= ".$x." Edad= ".$valorx."<br>";
+}
+
+echo "<br> Primer alumno: ".$claves[0]." ".$valor[0]."<br>";
+echo "<br> Ultimo alumno: ".$claves[$longitud]." ".$valor[$longitud]."<br>";
+?>
+</BODY>
+</HTML>
