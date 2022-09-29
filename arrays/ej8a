@@ -1,0 +1,32 @@
+<HTML>
+<HEAD> <TITLE> Ejercicio 7 </TITLE> </HEAD>
+<BODY>
+<?php
+$alumnos=array("Marcos"=>"10","Oscar"=>"5","Manu"=>"4","Diana"=>"7","Dani"=>"2");
+/*mayor nota, menor nota y media*/
+$longitud=count($alumnos);
+$media=0;
+
+arsort($alumnos);
+$claves=array_keys($alumnos);
+$valor=array_values($alumnos);
+
+echo "Alumno con mayor nota: ".$claves[0]." Nota: ".$valor[0]."<br>";
+echo"<br>";
+$min=asort($alumnos);
+$claves=array_keys($alumnos);
+$valor=array_values($alumnos);
+
+echo "Alumno con menor nota: ".$claves[0]." Nota: ".$valor[0]."<br>";
+
+for($x=0;$x<=$longitud-1;$x++){
+    $media=$media+$valor[$x];
+}
+
+echo "<br>";
+$media=$media/$longitud;
+
+echo "La media de las notas es $media";
+?>
+</BODY>
+</HTML>
