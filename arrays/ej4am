@@ -1,0 +1,55 @@
+<HTML>
+<HEAD> <TITLE> Ejercicio 3 </TITLE> </HEAD>
+<BODY>
+<?php
+$fil0=array();
+$fil1=array();
+$fil2=array();
+$contador=0;
+for ($x=1;$x<=15;$x++){
+    if($x<=5){
+        $fil0[$contador]=$x;
+    }elseif($x<=10){
+            $fil1[$contador-5]=$x;
+        }else{
+            $fil2[$contador-10]=$x;
+        }
+   $contador++;
+}
+
+
+
+$numeros=array($fil0,$fil1,$fil2);
+
+
+for ($fila=0;$fila<=count($numeros)-1;$fila++){
+    for($col=0;$col<=count($fil0)-1;$col++){
+        echo "La posicion (".$fila.",".$col.") es = ".$numeros[$fila][$col]."<br>";
+    }
+}
+echo "<br><br>";
+
+for($col=0;$col<=4;$col++){
+
+    for ($fila=0;$fila<=2;$fila++){
+    
+        echo "La posicion (".$fila.",".$col.") es = ".$numeros[$fila][$col]."<br>";
+    }
+}
+
+array_multisort($numeros, SORT_DESC, $ordenados);
+
+var_dump($ordenados);
+
+
+/*$nuevoarray=array_merge($fil0,$fil1,$fil2);
+
+arsort($nuevoarray);
+
+$max=$nuevoarray[0];
+$valormax=array_search($max, $numeros);
+
+var_dump($valormax);*/
+?>
+</BODY>
+</HTML>
