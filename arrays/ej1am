@@ -1,0 +1,33 @@
+<HTML>
+<HEAD> <TITLE> Ejercicio 1 </TITLE> </HEAD>
+<BODY>
+<?php
+$incremento=2;
+$array1= array();
+$array2=array();
+$array3=array();
+
+
+for ($x=0;$x<=2;$x++){
+
+    $array1[$x]=$incremento;
+    $array2[$x]=$incremento+6;
+    $array3[$x]=$incremento+12;
+    $incremento=$incremento+2;
+}
+
+$numeros=array($array1,$array2,$array3);
+
+//var_dump($numeros);
+echo "<table style border=2px>";
+
+for($x=0;$x<=2;$x++){
+    echo "<tr>";
+    for($i=0;$i<=2;$i++){
+        echo"<td>".$numeros[$x][$i];
+    }
+    echo"</tr>";
+}
+?>
+</BODY>
+</HTML>
