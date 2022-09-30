@@ -1,0 +1,68 @@
+<HTML>
+<HEAD> <TITLE> Ejercicio 2 </TITLE> </HEAD>
+<BODY>
+<?php
+$incremento=2;
+$array1= array();
+$array2=array();
+$array3=array();
+
+
+for ($x=0;$x<=2;$x++){
+
+    $array1[$x]=$incremento;
+    $array2[$x]=$incremento+6;
+    $array3[$x]=$incremento+12;
+    $incremento=$incremento+2;
+}
+
+$numeros=array($array1,$array2,$array3);
+
+echo "<table style border=2px>";
+
+for($x=0;$x<=2;$x++){
+    echo "<tr>";
+    for($i=0;$i<=2;$i++){
+        echo"<td>".$numeros[$x][$i];
+    }
+    echo"</tr>";
+}
+echo "</table>";
+
+$filas= array();
+
+for ($f=0;$f<=2;$f++){
+    $suma=0;
+    for($g=0;$g<=2;$g++){
+      $suma=$suma+$numeros[$f][$g];  
+    }
+    $filas[$f]=$suma;
+}
+
+$columnas=array();
+
+for ($c=0;$c<=2;$c++){
+    $suma=0;
+    for($d=0;$d<=2;$d++){
+      $suma=$suma+$numeros[$d][$c];  
+    }
+    $columnas[$c]=$suma;
+}
+
+
+echo"<br><br>SUMA POR FILAS: <table style border=2px>";
+
+for ($s=0;$s<=2;$s++){
+    echo"<tr><td>".$filas[$s]."</td></tr>";
+}
+
+echo"</table><br><br>SUMA POR COLUMNAS: <table style border=2px><tr>";
+
+for ($s=0;$s<=2;$s++){
+    echo"<td>".$columnas[$s]."</td>";
+}
+
+echo "</tr></table>";
+?>
+</BODY>
+</HTML>
