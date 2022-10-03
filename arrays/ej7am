@@ -16,11 +16,12 @@
 foreach ($calificaciones as $alumno => $notas) {
 echo "Alumno: $alumno |";
 foreach ($notas as $asignatura => $nota) {
-echo "| $asignatura ==> $nota";
+echo "| $asignatura = $nota";
 }
 echo "<br>";
 }
 $mphp = 0;$mingles = 0;$mdiw = 0;$mdaw = 0;
+echo "<br><br>";
 foreach ($calificaciones as $alumno => $notas) {
 foreach ($notas as $asignatura => $nota) {
 if ($asignatura == "php" && $nota > $mphp)$mphp = $nota;
@@ -33,7 +34,7 @@ echo "<p>La mayor nota en php es: ".$mphp."</p>";
 echo "<p>La mayor nota en ingles es: ".$mingles."</p>";
 echo "<p>La mayor nota en diw es: ".$mdiw."</p>";
 echo "<p>La mayor nota en daw es: ".$mdaw."</p>";
-
+echo "<br><br>";
 
 $miphp = 10;$miingles = 10;$midiw = 10;$midaw = 10;
 foreach ($calificaciones as $alumno => $notas) {
@@ -48,7 +49,7 @@ echo "<p>El alumno con la menor nota en php es: ".$aphp."</p>";
 echo "<p>El alumno con la menor nota en ingles es: ".$aingles."</p>";
 echo "<p>El alumno con la menor nota en diw es: ".$adiw."</p>";
 echo "<p>El alumno con la menor nota en daw es: ".$adaw."</p>";
-
+echo "<br><br>";
 $min = 10;
 foreach ($calificaciones as $alumno => $notas) {
 $min = 10;
@@ -57,7 +58,7 @@ if ($nota < $min) {$asig = $asignatura;$min = $nota;}
 }
 echo "<p>La menor nota del alumno ".$alumno." es en la asignatura ".$asig."</p>";
 }
-
+echo "<br><br>";
 $max = 0;
 foreach ($calificaciones as $alumno => $notas) {
 $max = 0;
@@ -66,7 +67,7 @@ if ($nota > $max){$asig = $asignatura;$max = $nota;}
 }
 echo "<p>La mayor nota del alumno ".$alumno." es en la asignatura ".$asig."</p>";
 }
-
+echo "<br><br>";
 $sphp = 0;$singles = 0;$sdiw = 0;$sdaw = 0;
 foreach ($calificaciones as $alumno => $notas) {
 foreach ($notas as $asignatura => $nota) {
@@ -80,6 +81,8 @@ echo "<p>La media de las notas en php es: ".($sphp/10)."</p>";
 echo "<p>La media de las notas en ingles es: ".($singles/10)."</p>";
 echo "<p>La media de las notas en diw es: ".($sdiw/10)."</p>";
 echo "<p>La media de las notas en daw es: ".($sdaw/10)."</p>";
+
+echo "<br><br>";
 
 foreach ($calificaciones as $alumno => $notas) {
 $suma = 0;
