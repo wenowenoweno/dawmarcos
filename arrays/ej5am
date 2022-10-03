@@ -1,0 +1,26 @@
+<HTML>
+    <head><title>Ejercicio 5 </title><head>
+<BODY>
+<?php
+      for ($i=0; $i < 3; $i++) {
+        for ($x=0; $x < 5; $x++) {
+          $numeros[$i][$x]=$i+$x;
+        }
+      }
+
+     
+      echo "<table border=1>";
+        for ($i=0; $i < count($numeros); $i++) {
+          echo "<tr>";
+          for ($x=0; $x < 5; $x++) {
+            echo "<td width=20>".$numeros[$i][$x]."</td>";
+          }
+          echo "</tr>";
+        }
+      echo "</table>";
+  
+ 
+ ?>
+
+</BODY>
+</HTML>
