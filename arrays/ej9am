@@ -1,0 +1,67 @@
+<HTML>
+<HEAD> <TITLE> Ejercicio 9 </TITLE> </HEAD>
+<BODY>
+<?php
+$normal = array(array(1,2,3),array(4,5,6),array(7,8,9),array(10,11,12));
+
+echo "<table border=1>";
+  for ($i=0; $i < count($normal); $i++) {
+    echo "<tr>";
+    for ($x=0; $x < count($normal[$i]); $x++) {
+      echo "<td width=20>".$normal[$i][$x]."</td>";
+    }
+    echo "</tr>";
+  }
+echo "</table>";
+
+for ($i=0; $i < count($normal[$i]); $i++) {
+  for ($x=0; $x < count($normal); $x++) {
+    $traspuesta[$i][$x] = $normal[$x][$i];
+  }
+}
+echo "<br><br>";
+echo "<table border=1>";
+  for ($i=0; $i < count($traspuesta); $i++) {
+    echo "<tr>";
+    for ($x=0; $x < count($traspuesta[$i]); $x++) {
+      echo "<td width=20>".$traspuesta[$i][$x]."</td>";
+    }
+    echo "</tr>";
+  }
+echo "</table>";
+?>
+</BODY>
+</HTML><HTML>
+<HEAD> <TITLE> Ejercicio 9 </TITLE> </HEAD>
+<BODY>
+<?php
+$normal = array(array(1,2,3),array(4,5,6),array(7,8,9),array(10,11,12));
+
+echo "<table border=1>";
+  for ($i=0; $i < count($normal); $i++) {
+    echo "<tr>";
+    for ($x=0; $x < count($normal[$i]); $x++) {
+      echo "<td width=20>".$normal[$i][$x]."</td>";
+    }
+    echo "</tr>";
+  }
+echo "</table>";
+
+for ($i=0; $i < count($normal[$i]); $i++) {
+  for ($x=0; $x < count($normal); $x++) {
+    $traspuesta[$i][$x] = $normal[$x][$i];
+  }
+}
+echo "<br><br>";
+echo "<table border=1>";
+  for ($i=0; $i < count($traspuesta); $i++) {
+    echo "<tr>";
+    for ($x=0; $x < count($traspuesta[$i]); $x++) {
+      echo "<td width=20>".$traspuesta[$i][$x]."</td>";
+    }
+    echo "</tr>";
+  }
+echo "</table>";
+?>
+</BODY>
+</HTML>
