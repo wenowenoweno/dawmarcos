@@ -1,5 +1,5 @@
 <HTML>
-<HEAD> <TITLE> Ejercicio 3 </TITLE> </HEAD>
+<HEAD> <TITLE> Ejercicio 4 </TITLE> </HEAD>
 <BODY>
 <?php
 $fil0=array();
@@ -37,19 +37,20 @@ for($col=0;$col<=4;$col++){
     }
 }
 
-array_multisort($numeros, SORT_DESC, $ordenados);
-
-var_dump($ordenados);
-
-
-/*$nuevoarray=array_merge($fil0,$fil1,$fil2);
-
-arsort($nuevoarray);
-
-$max=$nuevoarray[0];
-$valormax=array_search($max, $numeros);
-
-var_dump($valormax);*/
+echo "<br><br>";
+$mayor=0;
+$posicionx=0;
+$posicioni=0;
+for ($x=0;$x<=2;$x++){
+    for($i=0;$i<=4;$i++){
+     if($numeros[$x][$i]>$mayor){
+        $mayor=$numeros[$x][$i];
+        $posicionx=$x;
+        $posicioni=$i;
+     }
+    }
+}
+echo "El num mayor es ".$mayor." en la posicion ".$posicionx.",".$posicioni;
 ?>
 </BODY>
 </HTML>
