@@ -26,7 +26,7 @@
                     $num=$num/2;
                     $binario=$resto.$binario;
                 }
-                echo 'Numero binario: '.$binario.'<br><br>';
+                echo 'EL numero '.$_POST["num"].' en binario es '.$binario.'<br><br>';
             }
             
             ?>
