@@ -1,7 +1,6 @@
 <?php
-/*
-function validar($datos){
 
+function validar($datos){
     $datos=trim($datos);
     $datos=stripslashes($datos);
     $datos=htmlspecialchars($datos);
@@ -37,38 +36,30 @@ function introducirDatos($nombre){
 
 function generarOptions(){
     $file=file("ibex35.txt");
-
     for($x=1;$x<count($file);$x++){
         $linea=$file[$x];
         $nombrelist=substr($linea, 0, strpos($linea, " "));
         echo '<option value="'.$nombrelist.'">'.$nombrelist.'</option>';
     }
-}*/
+}
 
-//function generarArray($nombreex, $nlinea){
-
+function valores($nombre){
     $file=file("ibex35.txt");
-    for($x=1;$x<count($file);$x++){
-        $linea=$file[$x];
-        $exnoma="/ACCIONA/";
-        $exnom='/([a-z]+\s[a-z]+\s[a-z]+)|([a-z]+\s[a-z]+\.)|([a-z]+\.\s[a-z]+)|([a-z]+\s[a-z]+)|[a-z]*/i';
-        //$nombre=substr($linea, 0, strpos($linea, " "));
-        preg_replace($exnoma, " ",$linea);
-        echo $nombre."<br>";
-        echo $linea."<br>";
-    }
-        /*
-        $variacionporc
-        $variacion
-        $acano
-        $max
-        $min
-        $vol
-        $cap
+
+    for ($x = 1; $x < count($file); $x++){ 
+        $linea = preg_split("/( +[^A-Za-z\d] )/", $file[$x]);
+
+        if ($linea[0] === $nombre){
+          return $linea;
+        }
     }
 }
-function buscarDatos($nombre, $campo){
-    $file=file("ibex35.txt");
 
-}*/
+function buscarValor($nombre, $campo){
+    $file=file("ibex35.txt");
+    $campos = preg_split("/([ ]{2,})/", $file[0]);
+    $index=array_search($campo ,$campos);
+    return valores($nombre)[$index];
+}
+
 ?>
