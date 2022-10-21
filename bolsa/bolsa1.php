@@ -1,7 +1,5 @@
 <?php
-$file=fopen("ibex35.txt","r");
-while(!feof($file)){
-    echo fgets($file)."<br>";
-}
-fclose($file);
+include "funciones_bolsa.php";
+
+mostrarDatos("ibex35.txt");
 ?>
