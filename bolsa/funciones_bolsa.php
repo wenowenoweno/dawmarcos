@@ -62,4 +62,26 @@ function buscarValor($nombre, $campo){
     return valores($nombre)[$index];
 }
 
+function totales($accion){
+    $file=file("ibex35.txt");
+    $campos = preg_split("/([ ]{2,})/", $file[0]);
+    
+    if($_POST["mostrar"]=="volumen"){
+        $total=0;
+        for($x=1;$x<count($file);$x++){
+            $linea=preg_split("/( +[^A-Za-z\d] )/", $file[$x]);
+            $ind=str_replace(".", "", $linea[7]);
+            $total=$total+$ind;
+        }
+        echo "<b>Total Volumen</b> ".$total;
+    }else{
+        $total=0;
+        for($x=1;$x<count($file);$x++){
+            $linea=preg_split("/( +[^A-Za-z\d] )/", $file[$x]);
+            $ind=str_replace(".", "", $linea[8]);
+            $total=$total+$ind;
+        }
+        echo "<b>Total Capitalizacion</b> ".$total;
+    }
+}
 ?>
