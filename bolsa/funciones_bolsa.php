@@ -1,5 +1,5 @@
 <?php
-
+/*
 function validar($datos){
 
     $datos=trim($datos);
@@ -34,4 +34,41 @@ function introducirDatos($nombre){
         echo "Nombre no encontrado";
     }
 }
+
+function generarOptions(){
+    $file=file("ibex35.txt");
+
+    for($x=1;$x<count($file);$x++){
+        $linea=$file[$x];
+        $nombrelist=substr($linea, 0, strpos($linea, " "));
+        echo '<option value="'.$nombrelist.'">'.$nombrelist.'</option>';
+    }
+}*/
+
+//function generarArray($nombreex, $nlinea){
+
+    $file=file("ibex35.txt");
+    for($x=1;$x<count($file);$x++){
+        $linea=$file[$x];
+        $exnoma="/ACCIONA/";
+        $exnom='/([a-z]+\s[a-z]+\s[a-z]+)|([a-z]+\s[a-z]+\.)|([a-z]+\.\s[a-z]+)|([a-z]+\s[a-z]+)|[a-z]*/i';
+        //$nombre=substr($linea, 0, strpos($linea, " "));
+        preg_replace($exnoma, " ",$linea);
+        echo $nombre."<br>";
+        echo $linea."<br>";
+    }
+        /*
+        $variacionporc
+        $variacion
+        $acano
+        $max
+        $min
+        $vol
+        $cap
+    }
+}
+function buscarDatos($nombre, $campo){
+    $file=file("ibex35.txt");
+
+}*/
 ?>
