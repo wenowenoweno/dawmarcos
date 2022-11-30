@@ -10,7 +10,7 @@
             $conn=null;
             ?>
             <input type="submit" value="Ver sueldo" name="b1">
-        </form>
+       
             Salario actual:
             <?php
                  if($_SERVER["REQUEST_METHOD"]=="POST"){ 
@@ -20,6 +20,7 @@
                             try {
                                 $conn=conexion();
                                 $dni=$_POST["dni"];
+                                echo "<br><br><input type='text' value='".$dni."' name='dni2' hidden>";
                                 mostrarSueldo($conn, $dni);
                                 $conn=null;
                                 }
@@ -29,6 +30,7 @@
                         }
                         if(isset($_POST["b2"])){
                             try {
+                                $dni=$_POST["dni2"];
                                 $conn=conexion();
                                 $sueldo=$_POST["nuevo"];
                                 cambiarSueldo($conn, $sueldo, $dni);
@@ -43,9 +45,9 @@
                }           
             ?>
             <br><br>
-            <form method="POST" action="modsalario.php">
+            
                 Nuevo sueldo: <input type="text" name="nuevo"><br><br>
                 <input type="submit" value="Cambiar sueldo" name="b2">
-            </form>
+        </form>
     </body>
 </html>
