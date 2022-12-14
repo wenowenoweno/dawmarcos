@@ -160,23 +160,29 @@ function comprobarStock($conn, $unidades, $pro, $alm){
 
 function quitarStock($conn, $unidades, $prod, $alm){
     try {
-        $stmt = $conn->prepare("select cantidad from almacena where id_producto=:pro and num_almacen=:alm;");
-        $stmt->bindParam(":pro", $pro);
+        $stmt = $conn->prepare("UPDATE almacena SET cantidad=cantidad - :cant WHERE id_producto=:prod AND num_almacen=:alm;");
+        $stmt->bindParam(":prod", $prod);
         $stmt->bindParam(":alm", $alm);
-        $stmt->execute();
-        $stmt->setFetchMode(PDO::FETCH_NUM);
-        $resultado=$stmt->fetchAll();
-        var_dump($resultado);
-        $cant=$resultado[0][0]-$unidades;
-        var_dump($cant);
-        $stmt = $conn->prepare(" update almacena set cantidad=:cant where id_producto=:prod and num_almacen=:alm;");
-        $stmt->bindParam(":pro", $pro);
-        $stmt->bindParam(":alm", $alm);
-        $stmt->bindParam(":cant", $cant);
+        $stmt->bindParam(":cant", $unidades);
         $stmt->execute();
     }
     catch(PDOException $e) {
         echo "Error2: " . $e->getMessage();
     }
 }
+
+function selectDni($conn){
+    $stmt = $conn->prepare("SELECT nif, nombre FROM cliente;");
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_NUM);
+    $resultado=$stmt->fetchAll();
+    echo "<select name='dni' id='dni'>";
+    for($x=0;$x<=count($resultado)-1;$x++){
+        echo "<option value=".$resultado[$x][0].">".$resultado[$x][1]."</option>";
+    }
+    echo "</select><br>";
+}
+
+
+
 ?>
