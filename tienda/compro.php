@@ -1,4 +1,7 @@
 <html>
+<link rel="stylesheet" href="estilo.css">
+<h1>Compra productos</h1>
+<a href="main.html">Menú</a>
     <form method="POST" action="compro.php">
         Dni: <input type="text" name="dni"><br>
         Selecciona producto:<?php
