@@ -43,16 +43,21 @@ if(!isset($_COOKIE['usuario'])){
     $alm=$_POST["dpto"];
     $cant=$_POST["unidades"];
     $art=[$prod=>$cant];
-    //$art=serialize($art);
     var_dump($_COOKIE);
-    var_dump($art);
     if(isset($_COOKIE["cesta"])){
-        array_push( $_COOKIE['cesta'], serialize($art));
-    }else{
+        $cookie_name="cesta";
+        $cesta=unserialize($_COOKIE["cesta"]);
+        $cesta[$prod]=$cant;
+        $cesta=serialize($cesta);
+        var_dump($cesta);
+        setcookie($cookie_name, $cesta, time() + (86400 * 30), "/"); 
+   }else{
         $cookie_name="cesta";
         setcookie($cookie_name, serialize($art), time() + (86400 * 30), "/"); 
 
     }
   }
 var_dump($_COOKIE["cesta"]);
+var_dump(unserialize($_COOKIE["cesta"]));
+
 ?>
