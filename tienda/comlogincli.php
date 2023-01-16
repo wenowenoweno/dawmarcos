@@ -18,20 +18,18 @@
 
         try {
             $conn=conexion();
-             $stmt = $conn->prepare("SELECT * FROM clientesweb
-                where usuario=:usuario and contrasena=:passw");
+             $stmt = $conn->prepare("SELECT nif FROM cliente
+                where nombre=:usuario and clave=:passw");
             $stmt->bindParam(":usuario", $usuario);
             $stmt->bindParam(":passw", $passw);
             $stmt->execute();
-            $stmt->setFetchMode(PDO::FETCH_NUM);
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $resultado=$stmt->fetchAll();
             if(count($resultado)>0){
                 echo "Login correcto!<br><br>";
                 ///Crear cookie
                     $cookie_name="usuario";
-                    setcookie($cookie_name, $usuario, time() + (86400 * 30), "/"); 
-                    $cookie_name="passw";
-                    setcookie($cookie_name, $passw, time() + (86400 * 30), "/"); 
+                    setcookie($cookie_name, $resultado[0]["nif"], time() + (86400 * 30), "/"); 
                     echo"        <a href='comprocli.php'>Compra de Productos</a><br>
                     <a href='comconscli.php'>Consulta de Compras</a>";    
             }else{
